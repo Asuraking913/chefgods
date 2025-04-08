@@ -7,12 +7,12 @@ import 'package:chefgods/pages/loading.dart';
 void main () => runApp(
 
     MaterialApp(
-        initialRoute: "/step_one",
+        initialRoute: "/home",
         routes: {
 
             '/' : (context) => Loading(),
             '/home' : (context) => Homepage(),
-            '/step_one' : (context) => StepOne(), 
+            '/step_one' : (context) => StepOne(),
             '/step_two' : (context) => StepTwo()
           }
       )

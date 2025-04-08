@@ -32,6 +32,41 @@ class StepOne extends StatelessWidget {
     						  					color: colorClass.secondary 
     						  				),), 
 
+                        SizedBox(height: 20,), 
+
+
+                        TextButton(
+                            onPressed: () {},
+                            child: Text('Continue'),
+                            style: TextButton.styleFrom(
+                                backgroundColor: colorClass.primary, 
+                                foregroundColor: colorClass.background, 
+                                minimumSize: Size(double.infinity, 45), 
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5)
+                                  )
+                              ),
+                          ), 
+
+                        SizedBox(height: 5,), 
+
+                        TextButton(
+                            onPressed: () {},
+                            child: Text('Skip'),
+                            style: TextButton.styleFrom(
+                                backgroundColor: colorClass.background, 
+                                foregroundColor: colorClass.secondary, 
+                                minimumSize: Size(double.infinity, 45), 
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5), 
+                                    side: BorderSide(
+                                        color: colorClass.secondary, 
+                                        width: 1.5
+                                      )
+                                  )
+                              ),
+                          )
+
     						  		],
     						  	),
     						),
