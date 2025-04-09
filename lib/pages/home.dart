@@ -1,77 +1,135 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:chefgods/components/colorClass.dart';
+import 'package:chefgods/components/food_category.dart';
+import 'package:chefgods/components/image_card_template.dart';
 import 'package:chefgods/components/nav_bar.dart';
-import 'package:chefgods/components/pickUp.dart';
-import 'package:chefgods/components/pickup_template.dart';
+import 'package:chefgods/components/place_orders.dart';
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
-class Homepage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   
   final colorClass = ColorClass();
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
+    		child: Scaffold(
           bottomNavigationBar: BottomNavigation(),
-            body: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                child: Column(
-                    children: <Widget>[
-                      Row(
-                          children: <Widget>[
-                            Text('Track Your Order', 
-                              style: TextStyle(
-                                color: colorClass.tertiary, 
-                                fontSize: 20, 
-                                fontWeight: FontWeight.w800, 
-                                fontFamily: 'inter'
-                              ),), 
+    			body: Container(
+    				color: colorClass.background,
+    			  child: Padding(
+    			  	padding: EdgeInsets.fromLTRB(20, 25, 20, 10),
+    			  	child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+    			  			children: <Widget>[
+    			  				Row(
+    			  					children: <Widget>[
+    			  						Container(
+    			  							padding: EdgeInsets.all(8),
+    			  							decoration: BoxDecoration(
+    			  									color: colorClass.white,
+    			  									borderRadius: BorderRadius.circular(50)
+    			  							),
+    			  						  child: Icon(
+    			  						  	Icons.search, 
+    			  						  	size: 20,
+    			  						  	),
+    			  						),
+    			  						Spacer(),
+    			  						Column(
+    			  							children: <Widget>[
+    			  								Text(
+    			  									'Location',
+    			  									style: TextStyle(
+    			  											color: colorClass.secondary, 
+    			  											fontSize: 12
+    			  										),
+    			  									), 
+    			  								Row(
+    			  									children: <Widget>[
+    			  										Transform.rotate(
+    			  											angle: math.pi / -2,
+    			  										  	child: Icon(
+    			  										  	Icons.arrow_back_ios_new_outlined, 
+    			  										  	size: 15,
+    			  										  ),
+    			  										),
+    			  										SizedBox(width: 5,),
+    			  										Text(
+    			  										'New York',
+    			  										style: TextStyle(
+    			  												color: colorClass.tertiary,
+    			  												fontSize: 14, 
+    			  												fontWeight: FontWeight.w500, 
+    			  												fontFamily: ''
+    			  											),
+    			  										), 
+    			  										SizedBox(width: 5,),
+    			  										Icon(
+    			  										Icons.location_on, 
+    			  										size: 15,
+    			  										color: colorClass.primary,
+    			  										    			  										  ),
+    			  									],
+    			  								)
+    			  							],
+    			  							), 
+    			  						Spacer(), 
+    			  						Container(
+    			  							padding: EdgeInsets.all(8),
+    			  							decoration: BoxDecoration(
+    			  									color: colorClass.white,
+    			  									borderRadius: BorderRadius.circular(50)
+    			  							),
+    			  						  child: Icon(
+    			  						  	Icons.shopping_cart_outlined, 
+    			  						  	size: 20,
+    			  						  	),
+    			  						),
 
-                            Spacer(),
+    			  					],
+    			  				), 
 
-                            Icon(
-                                Icons.gps_fixed
-                              )
+                    SizedBox(height: 25,),
+
+    			  				CarouselSlider(
+    			  				    options: CarouselOptions(
+    			  				        viewportFraction: 0.9,
+                            autoPlay: true, 
+                            height: 200
+    			  				      ),
+    			  				
+    			  				    items: [
+    			  				      Padding(
+    			  				        padding: const EdgeInsets.symmetric(horizontal: 5),
+    			  				        child: ImageCard(),
+    			  				      ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            child: ImageCard(),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            child: ImageCard(),
+                          ),
 
 
-                          ],
-                        ), 
+    			  				    ],
+    			  				  ), 
 
-                      SizedBox(height: 20,),
+                    SizedBox(height: 10,),
 
-                      Padding(
-                          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 0),
-                          child: Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: colorClass.white,
-                              borderRadius: BorderRadius.circular(25)
-                              ),
-                            child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                                 child: Image.asset('assets/image/map2.jpeg', fit: BoxFit.cover,)   ,
-                            ),
-                          )
-                      ), 
+                    FoodCategory(), 
 
-                      Pickup(), 
-
-                      Pickuptemplate(
-                        option: 'Your Address', 
-                        value: '1500 Broadway Ave, New York',
-                        third: "NY 10036",
-                        icon: Icons.location_on_outlined,
-                        ), 
-                      Pickuptemplate(
-                        option: 'Delivery Team', 
-                        value: '30 Minutes',
-                        icon: Icons.access_time_sharp,
-                        )
-
-                    ],
-                  ),
-              ),
-          ),
-      );
+                    SizedBox(height: 10,),
+                    
+                    PlaceOrders()
+    			  			],
+    			  		), //column
+    				  ),
+    				),
+    			),
+    	);
   }
 }

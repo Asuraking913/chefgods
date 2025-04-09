@@ -1,0 +1,31 @@
+import 'package:chefgods/components/colorClass.dart';
+import 'package:flutter/material.dart';
+
+class PlaceOrders extends StatelessWidget {
+  final colorClass = ColorClass();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+    	padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+    	child:  Column(
+    			children: <Widget>[
+    				Row(
+    					children: <Widget>[
+    						Text('Place Your Orders', style:  TextStyle(
+    								fontSize: 15,
+    								color: colorClass.tertiary, 
+    								fontFamily: 'inter', 
+    								fontWeight: FontWeight.w800
+    							),),
+    						Spacer(),
+    						Text('See all', style: TextStyle(
+    								color: colorClass.secondary
+    							),),
+    					],
+    				)
+    			],
+    		),
+    	);
+  }
+}

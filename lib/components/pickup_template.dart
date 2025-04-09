@@ -22,10 +22,6 @@ class Pickuptemplate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
 				padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-				decoration: BoxDecoration(
-				    borderRadius: BorderRadius.circular(10),
-				    color: colorClass.white,
-				  ),
 				child: Container(
 				    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
 				    decoration: BoxDecoration(
