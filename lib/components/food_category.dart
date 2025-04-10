@@ -19,6 +19,7 @@ class FoodCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
     		child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
     					children: <Widget>[
     						Text('Food Category', style: TextStyle(
                         	color: colorClass.tertiary,

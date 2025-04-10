@@ -1,4 +1,5 @@
 import 'package:chefgods/components/colorClass.dart';
+import 'package:chefgods/components/order_card.dart';
 import 'package:flutter/material.dart';
 
 class PlaceOrders extends StatelessWidget {
@@ -7,8 +8,11 @@ class PlaceOrders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.black,
+      height: 250,
     	padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
     	child:  Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
     			children: <Widget>[
     				Row(
     					children: <Widget>[
@@ -23,7 +27,17 @@ class PlaceOrders extends StatelessWidget {
     								color: colorClass.secondary
     							),),
     					],
-    				)
+    				), 
+
+            SizedBox(height: 15,),
+
+            Row(
+              children: <Widget>[
+                OrderCard(),
+                SizedBox(width: 10,),
+                OrderCard(),
+              ],
+            ),
     			],
     		),
     	);
