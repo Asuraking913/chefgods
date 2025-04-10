@@ -17,7 +17,6 @@ class HomePage extends StatelessWidget {
     		child: Scaffold(
           bottomNavigationBar: BottomNavigation(),
     			body: SingleChildScrollView(
-    			  // padding: const EdgeInsets.all(8.0),
     			  child: Container(
     			  	color: colorClass.background,
     			    child: Padding(
@@ -72,7 +71,7 @@ class HomePage extends StatelessWidget {
     			    										Icons.location_on, 
     			    										size: 15,
     			    										color: colorClass.primary,
-    			    										    			  										  ),
+    			                                  ),
     			    									],
     			    								)
     			    							],
@@ -120,13 +119,13 @@ class HomePage extends StatelessWidget {
     			    				    ],
     			    				  ), 
     			  
-    			                      SizedBox(height: 10,),
+    			             SizedBox(height: 10,),
     			  
-    			                      FoodCategory(), 
+    			             FoodCategory(), 
     			  
-    			                      SizedBox(height: 10,),
-    			                      
-    			                      PlaceOrders()
+    			             SizedBox(height: 10,),
+    			             
+    			             PlaceOrders()
     			    			],
     			    		), //column
     			  	  ),

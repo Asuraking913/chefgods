@@ -8,8 +8,8 @@ class PlaceOrders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
-      height: 250,
+      // color: Colors.black,
+      // height: 250,
     	padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
     	child:  Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,6 +38,30 @@ class PlaceOrders extends StatelessWidget {
                 OrderCard(),
               ],
             ),
+            // Row(
+            //   children: <Widget>[
+            //     OrderCard(),
+            //     SizedBox(width: 10,),
+            //     OrderCard(),
+
+            //   ],
+            // ),
+            // Row(
+            //   children: <Widget>[
+            //     OrderCard(),
+            //     SizedBox(width: 10,),
+            //     OrderCard(),
+                
+            //   ],
+            // ),
+            // Row(
+            //   children: <Widget>[
+            //     OrderCard(),
+            //     SizedBox(width: 10,),
+            //     OrderCard(),
+                
+            //   ],
+            // ),
     			],
     		),
     	);
