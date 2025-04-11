@@ -5,11 +5,29 @@ class OrderCard extends StatelessWidget {
   
   final colorClass = ColorClass();
 
+  String name;
+  int time;
+  double rating;
+  String price;
+  String image;
+
+  OrderCard({
+
+    required this.name,
+    required this.time,
+    required this.rating,
+    required this.price, 
+    required this.image 
+
+    });
+
+
   @override
   Widget build(BuildContext context) {
 
     return Expanded(
       child: Container(
+          width: MediaQuery.of(context).size.width/2.5,
       		padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
               color: colorClass.white,
@@ -27,7 +45,7 @@ class OrderCard extends StatelessWidget {
       								size: 16,
       							),
       						Text(
-      							'4.7',
+      							'$rating',
       							style: TextStyle(
       									color: colorClass.tertiary,
       									fontSize: 14,
@@ -37,7 +55,7 @@ class OrderCard extends StatelessWidget {
       					],
       				), 
 
-      				Center(child: Image.asset('assets/image/food1.png', width: 90, height: 90,)), 
+      				Center(child: Image.asset('assets/image/${image}', width: 90, height: 90,)), 
               Text('Pizza', style: TextStyle(
                   color: colorClass.tertiary,
                   fontWeight: FontWeight.w500, 
@@ -73,20 +91,23 @@ class OrderCard extends StatelessWidget {
                       children: [
                         Positioned(
                             child: Container(
-                              padding: EdgeInsets.all(10),
+                              padding: EdgeInsets.all(2),
                               decoration:  BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
                                   boxShadow: [
                                   BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5), // Shadow color
+                                      color: Colors.grey.withOpacity(0.2), // Shadow color
                                       spreadRadius: 3, // How much the shadow spreads
-                                      blurRadius: 7, // How blurry the shadow is
-                                      offset: Offset(0, 3), // Shadow position (horizontal, vertical)
+                                      blurRadius: 1, // How blurry the shadow is
+                                      offset: Offset(0, 1), // Shadow position (horizontal, vertical)
                                     ),
                                   ]
                                 ),
-                                child: Icon(
-                                    Icons.add
-                                  ),
+                                child: Center(
+                                  child: Icon(
+                                      Icons.add
+                                    ),
+                                ),
                               ),
                           )
                       ],
