@@ -1,5 +1,6 @@
 import 'package:chefgods/components/colorClass.dart';
 import 'package:chefgods/components/nav_bar.dart';
+import 'package:chefgods/components/suggested_template.dart';
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatelessWidget {
@@ -10,7 +11,9 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
     		child: Scaffold(
+            bottomNavigationBar: BottomNavigation(),
     				body: Container(
+                            color: colorClass.background,
     						padding: EdgeInsets.fromLTRB(20, 25, 20, 10),
     						child: Column(
     								children: <Widget>[
@@ -53,11 +56,67 @@ class SearchPage extends StatelessWidget {
     													color: colorClass.secondary
     												), 
     										)
-    								)
-    						],
+    								),
+
+                    SizedBox(height: 10,),
+
+                    Container(
+                      height: 35,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                      
+                        children: [
+                          TextButton.icon(
+                              onPressed: () {},
+                              label: Text('Pickup', style: TextStyle( color: colorClass.secondary ),),
+                              icon: Icon(Icons.gesture, color: colorClass.secondary,),
+                            ), 
+                          TextButton.icon(
+                              onPressed: () {},
+                              label: Text('Under 30 min', style: TextStyle( color: colorClass.secondary ),),
+                              icon: Icon(Icons.access_time_sharp, color: colorClass.secondary,),
+                            ), 
+                          TextButton.icon(
+                              onPressed: () {},
+                              label: Text('Price', style: TextStyle( color: colorClass.secondary ),),
+                              icon: Icon(Icons.space_dashboard_sharp, color: colorClass.secondary,),
+                            ),
+                          TextButton.icon(
+                              onPressed: () {},
+                              label: Text('Pickup', style: TextStyle( color: colorClass.secondary ),),
+                              icon: Icon(Icons.gesture, color: colorClass.secondary,),
+                            ),
+                          TextButton.icon(
+                              onPressed: () {},
+                              label: Text('Pickup', style: TextStyle( color: colorClass.secondary ),),
+                              icon: Icon(Icons.gesture, color: colorClass.secondary,),
+                            ),
+                          TextButton.icon(
+                              onPressed: () {},
+                              label: Text('Pickup', style: TextStyle( color: colorClass.secondary ),),
+                              icon: Icon(Icons.gesture, color: colorClass.secondary, ),
+                            ),
+                        ],
+                      
+                      ),
+                    ), 
+
+                    SizedBox(height: 25,),
+
+                    Row(
+                        children: [
+                            Expanded(child: SuggestedCardTemplate(name: "Chicken 'N fries", price: "30", time: '24min 17min', image: 'food.jpg',)), 
+                            SizedBox(width:  10,),
+                            Expanded(child: SuggestedCardTemplate(name: "Briskette", price: '20', time: '21min 15min', image: 'food.jpg',)), 
+                        ],
+                    ), 
+
+                    SizedBox(height: 25,),
+
+
+    			],
     				),
     					),
-    				bottomNavigationBar: BottomNavigation(),
     			),
     	);
   }
