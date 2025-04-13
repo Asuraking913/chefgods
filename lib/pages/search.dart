@@ -1,5 +1,6 @@
 import 'package:chefgods/components/colorClass.dart';
 import 'package:chefgods/components/nav_bar.dart';
+import 'package:chefgods/components/recommended.dart';
 import 'package:chefgods/components/suggested_template.dart';
 import 'package:flutter/material.dart';
 
@@ -112,6 +113,8 @@ class SearchPage extends StatelessWidget {
                     ), 
 
                     SizedBox(height: 25,),
+
+                    Recommended()
 
 
     			],
