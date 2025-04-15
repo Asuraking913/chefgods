@@ -51,12 +51,17 @@ class SearchPage extends StatelessWidget {
     				  					SizedBox(height: 20,),
     				  
     				  					TextField(
-    				  							obscureText: true,
+    				  							obscureText: false,
     				  							decoration: InputDecoration(
     				  							enabledBorder: OutlineInputBorder(
     				  									borderSide: BorderSide(color: Colors.transparent), 
     				  									borderRadius: BorderRadius.circular(30)
     				  								) ,
+
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                borderSide: BorderSide(width: 0, color: Colors.transparent)
+                              ),
     				  							fillColor: colorClass.white,
     				  							filled: true,
     				  							hintText: 'Search...',
@@ -134,7 +139,6 @@ class SearchPage extends StatelessWidget {
                                       children: recommendedList.map((items) => Recommended(name: items.name, price: items.price, time: items.price, image: items.image,)).toList(),
                                       runSpacing: 10,
                                     )
-    				  
     				      			],
     				  ),
     				  	),
