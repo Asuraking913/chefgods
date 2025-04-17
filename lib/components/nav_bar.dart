@@ -1,26 +1,41 @@
 import 'package:chefgods/components/colorClass.dart';
+import 'package:chefgods/main.dart';
+import 'package:chefgods/pages/home.dart';
+import 'package:chefgods/pages/order.dart';
+import 'package:chefgods/pages/search.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BottomNavigation extends StatelessWidget {
+class BottomNavigation extends ConsumerWidget {
   final colorclass = ColorClass();
-  int current_index;
-  final Function(int) onItemTapped;
-
-  BottomNavigation({
-
-      required this.onItemTapped, 
-      required this.current_index
-
-    });
-
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final current_index = ref.watch(providerName);
     return BottomNavigationBar(
       currentIndex: current_index,
       selectedFontSize: 16 ,
       selectedItemColor: colorclass.primary,
-      onTap: onItemTapped,
+      onTap: (index){
+          ref.watch(providerName.notifier).state = index;
+          switch(index) {
+
+            case 0:
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => HomePage()
+                )); 
+              break;
+            case 1:
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => Order()
+                )); 
+            case 2:
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => SearchPage()
+                )); 
+
+          }
+        },
     	backgroundColor: colorclass.white,
     		items: [
     			BottomNavigationBarItem(
@@ -30,7 +45,7 @@ class BottomNavigation extends StatelessWidget {
     				), 
     			BottomNavigationBarItem(
     					icon: Icon(Icons.bike_scooter, color: colorclass.primary,),
-    					label: "Pick up",
+    					label: "Order",
     					backgroundColor: colorclass.white
     				), 
 

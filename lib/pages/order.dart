@@ -3,13 +3,15 @@ import 'package:chefgods/components/nav_bar.dart';
 import 'package:chefgods/components/pickUp.dart';
 import 'package:chefgods/components/pickup_template.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Order extends StatelessWidget {
+class Order extends ConsumerWidget {
   
   final colorClass = ColorClass();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+
     return SafeArea(
         child: Scaffold(
           backgroundColor: colorClass.background,
