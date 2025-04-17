@@ -5,28 +5,37 @@ class ClassButtonClass extends StatelessWidget {
 
 	final String label;
 	final colorClass = ColorClass();
+	final Function()? onTap;
 
 	ClassButtonClass({
 
-			required this.label
+			required this.label, 
+			this.onTap
 
 		});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-    		onTap: () {},
+    		onTap: () {
+    				onTap!();
+    			},
     		child: Container(
     				width: double.infinity,
-    				padding: EdgeInsets.all(20),
+    				padding: EdgeInsets.all(18),
     				decoration: BoxDecoration(
-    						color: colorClass.white
+    						color: colorClass.white, 
+    						borderRadius: BorderRadius.circular(10),
+    						border: Border.all(
+    								width: 1, 
+    								color: Color.fromARGB(225, 224, 224, 224)
+    							)
     					),
     				child: Center(
     						child: Text(label, style: TextStyle(
     								fontFamily: 'inter', 
     								fontWeight: FontWeight.w600, 
-    								// color: colorClass.primary
+    								color: colorClass.primary
     							),),
     					),
     			)

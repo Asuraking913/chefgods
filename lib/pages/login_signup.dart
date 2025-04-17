@@ -15,19 +15,20 @@ class _LoginOrRegisterPageState extends State<LoginOrRegisterPage> {
 	final colorClass = ColorClass();	
 	bool isLogin = true;
 
-  void onRoute(param) {
+  void onRoute() {
     setState(() {
           isLogin = !isLogin;
+          print(isLogin);
         });
   }
 
   @override
   Widget build(BuildContext context) {
     if(isLogin) {
-    	return LoginPage(onTap: onRoute,);
+    	return LoginPage(onTap: onRoute);
     }
     else{
-    	return RegisterPage(onTap: onRoute,);
+    	return RegisterPage(onTap: onRoute);
     }
   }
 }

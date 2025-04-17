@@ -1,4 +1,4 @@
-import 'package:chefgods/components/register.dart';
+import 'package:chefgods/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:chefgods/components/button_class.dart';
 import 'package:chefgods/components/colorClass.dart';
@@ -6,11 +6,11 @@ import 'package:chefgods/components/textfield_class.dart';
 
 class LoginPage extends StatefulWidget {
 
-  final Function onTap;
+  final Function()? onTap;
 
   LoginPage({
 
-      required this.onTap
+      this.onTap
 
     });
 
@@ -21,10 +21,10 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final colorClass = ColorClass();
 
-  void onToggleRoute () {
+  void onNavigateHome () {
 
     Navigator.push(context, MaterialPageRoute(
-        builder: (context) => RegisterPage()
+        builder: (context) => HomePage()
       ));
 
   }
@@ -33,10 +33,10 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
     		child: Scaffold(
-    				body: Center(
+    				body: SingleChildScrollView(
     						child: Container(
     							color: colorClass.background,
-    							padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+    							padding: EdgeInsets.symmetric(vertical: 100, horizontal: 20),
     						  child: Column(
     						  		mainAxisAlignment: MainAxisAlignment.center,
     						  		children: [
@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
 
     						  				SizedBox(height: 20,),
 
-    						  				ClassButtonClass(label: 'Login',),
+    						  				ClassButtonClass(label: 'Login', onTap: onNavigateHome,),
     						  				SizedBox(height: 10,),
 
 
@@ -73,18 +73,16 @@ class _LoginPageState extends State<LoginPage> {
     						  						GestureDetector(
     						  								onTap: () {
 
-                                      widget.onTap();
+                                      widget.onTap!();
 
                                     },
-    						  								child: Container(
-    						  										child: Text('Register', style: TextStyle(
-    						  												fontFamily: 'inter',
-    						  												color: colorClass.primary,
-    						  												fontWeight: FontWeight.w600, 
-    						  												decoration: TextDecoration.underline, 
-    						  												decorationColor: colorClass.primary
-    						  											),),
-    						  									),
+    						  								child: Text('Register', style: TextStyle(
+    						  										fontFamily: 'inter',
+    						  										color: colorClass.primary,
+    						  										fontWeight: FontWeight.w600, 
+    						  										decoration: TextDecoration.underline, 
+    						  										decorationColor: colorClass.primary
+    						  									),),
     						  							)
     						  					],
     						  					)
