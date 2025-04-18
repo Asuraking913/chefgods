@@ -1,3 +1,4 @@
+import 'package:chefgods/pages/card.dart';
 import 'package:chefgods/pages/login_signup.dart';
 import 'package:chefgods/pages/order.dart';
 import 'package:chefgods/pages/search.dart';
@@ -14,7 +15,7 @@ void main () => runApp(
 
     ProviderScope(
       child: MaterialApp(
-          initialRoute: "/auth",
+          initialRoute: "/cart",
           routes: {
       
               '/' : (context) => Loading(),
@@ -23,7 +24,8 @@ void main () => runApp(
               '/step_one' : (context) => StepOne(),
               '/step_two' : (context) => StepTwo(),
               '/search' : (context) => SearchPage(),
-              '/auth' : (context) => LoginOrRegisterPage()
+              '/auth' : (context) => LoginOrRegisterPage(), 
+              '/cart' : (context) => CartPage()
             }
         ),
     )

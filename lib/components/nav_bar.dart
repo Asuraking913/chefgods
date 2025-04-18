@@ -16,6 +16,8 @@ class BottomNavigation extends ConsumerWidget {
       currentIndex: current_index,
       selectedFontSize: 16 ,
       selectedItemColor: colorclass.primary,
+      unselectedFontSize: 16,
+      unselectedItemColor: colorclass.secondary,
       onTap: (index){
           ref.watch(providerName.notifier).state = index;
           switch(index) {
@@ -54,6 +56,11 @@ class BottomNavigation extends ConsumerWidget {
     					label: "Search",
     					backgroundColor: colorclass.white
     				), 
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart_outlined, color: colorclass.primary,),
+              label: "Search",
+              backgroundColor: colorclass.white
+            ), 
 
     		],
     	);
