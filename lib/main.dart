@@ -1,4 +1,4 @@
-import 'package:chefgods/pages/card.dart';
+import 'package:chefgods/pages/cart.dart';
 import 'package:chefgods/pages/login_signup.dart';
 import 'package:chefgods/pages/order.dart';
 import 'package:chefgods/pages/search.dart';
